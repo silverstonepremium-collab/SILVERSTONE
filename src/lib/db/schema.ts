@@ -1,4 +1,9 @@
-import { sql } from '@neondatabase/serverless';
+import { neon, neonConfig } from '@neondatabase/serverless';
+
+// Configure Neon for serverless
+neonConfig.fetchConnectionCache = true;
+
+const sql = neon(process.env.DATABASE_URL!);
 
 /**
  * Initialize database schema for Silverstone Logistics
@@ -136,3 +141,5 @@ export async function initializeDatabase() {
     throw error;
   }
 }
+
+export { sql };
