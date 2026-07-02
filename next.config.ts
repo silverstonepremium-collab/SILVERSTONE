@@ -5,6 +5,7 @@ const config: NextConfig = {
   typescript: {
     tsconfigPath: "./tsconfig.json",
   },
+  output: "standalone",
 };
 
 export default config;
